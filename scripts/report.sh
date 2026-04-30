@@ -1,0 +1,15 @@
+#!/bin/bash
+mkdir -p ./notes
+DATE=$(date +%Y-%m-%d)
+REPORT_FILE="./notes/${DATE}.txt"
+
+echo "اسم المستخدم الحالي: $(whoami)" > "$REPORT_FILE"
+echo "المسار الحالي: $(pwd)" >> "$REPORT_FILE"
+
+if [ -d "./data" ]; then
+    FILE_COUNT=$(ls -1 ./data | wc -l)
+    echo "عدد الملفات داخل data/: $FILE_COUNT" >> "$REPORT_FILE"
+else
+    echo "مجلد data/ غير موجود." >> "$REPORT_FILE"
+fi
+echo "Done! Report created in $REPORT_FILE"
