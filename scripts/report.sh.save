@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# إنشاء ملف التقرير بداخل مجلد notes
+# سيقوم بكتابة المعلومات المطلوبة تلقائياً
+FILENAME="notes/report.txt"
+
+echo "اسم المستخدم: $(whoami)" > $FILENAME
+echo "المسار الحالي: $(pwd)" >> $FILENAME
+echo "عدد الملفات في data: $(ls data | wc -l)" >> $FILENAME
+
+echo "Done! The report is ready."
